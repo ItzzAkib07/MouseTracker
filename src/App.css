@@ -1,10 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body{
   background-color: black;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
   font-family: 'Poppins' ,sans-serif;
+}
+
+/* Scroll top button */
+.scroll {
+  width: 100%;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: inherit;
+  cursor: pointer;
+  position: sticky;
+  bottom: 1rem;
+  left: 95%;
+}
+
+.scroll button {
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  color: #757575;
+  cursor: pointer;
 }
 
 .container {
@@ -18,7 +44,7 @@ nav {
   color: #f2f2f2;
   padding: 10px;
   width: 100%;
-  text-align: center;
+  text-align: right;
   font-size: 20px;
   z-index: 2;
 }
@@ -29,14 +55,36 @@ nav ul {
 }
 
 nav li {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  /* padding: 20px 0px; */
   display: inline-block;
-  margin: 0 50px;
+  position: relative;
+  margin: 0 40px;
 }
 
 nav ul li:hover {
   cursor: pointer;
-  text-decoration: underline;
   color: crimson;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: crimson;
+}
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: -5px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 100%;
 }
 
 h1 {
@@ -77,3 +125,111 @@ h3 {
   height: 100vh;
   z-index: 0;
 }
+
+canvas {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* About Section */
+
+.About {
+  display: flex;
+  flex-direction: column;
+  min-height: 50dvh;
+  text-align: center;
+}
+
+.about-spline {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+  user-select: none;
+  pointer-events: none;
+}
+
+.spline-viewer {
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  top: 100vh;
+  left: 0;
+  clip-path: polygon(0 0, 80% 0, 70% 100%, 0% 100%);
+  z-index: 2;
+}
+
+.about-title {
+  font-size: max(15px, 15vw);
+  margin-top: 80vh;
+  margin-left: 30%;
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.sub-title{
+  font-size: max(5px, 5vw);
+  margin-top: 45vh;
+  margin-left: 50%;
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: white;
+}
+
+.info{
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avtaar{
+  width: 50%;
+  display: flex;
+  padding: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+  /* background-color: green; */
+}
+
+.avtaar img{
+  height: 50%;
+  width: 50%;
+}
+
+.myself{
+  width: 50%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: .5rem; */
+  /* background-color: yellow;/ */
+}
+
+/* .myself span{
+  font-size: 2rem;
+  color: white;
+  font-weight: bolder;
+} */
+
+.myself span {
+  font-size: 1.5rem;
+  color: white;
+  width: 90%;
+}
+
