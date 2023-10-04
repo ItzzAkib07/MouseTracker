@@ -22,7 +22,7 @@ function App() {
           <ul>
             <li>Home</li>
             <li>About</li>
-            <li>Links</li>
+            <li>My Work</li>
             <li>Contact</li>
           </ul>
 
