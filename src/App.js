@@ -17,14 +17,16 @@ function App() {
 
 
 
-          <nav>
-            <ul>
-              <li className='nav-link nav-link-ltr'>Home</li>
-              <li className='nav-link nav-link-ltr'>About</li>
-              <li className='nav-link nav-link-ltr'>My work</li>
-              <li className='nav-link nav-link-ltr'>Contact</li>
-            </ul>
-          </nav>
+        <nav>
+
+          <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Links</li>
+            <li>Contact</li>
+          </ul>
+
+        </nav>
 
           <h1>Hi, I'm </h1>
 
