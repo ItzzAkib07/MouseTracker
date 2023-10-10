@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+
+/* universal */
 body{
   background-color: black;
   padding: 0;
@@ -7,6 +9,60 @@ body{
   overflow-x: hidden;
   font-family: 'Poppins' ,sans-serif;
 }
+
+.ribbon{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.ribbon .list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0;
+}
+
+.ribbon .list .links{ 
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.links a{
+  color: white;  
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.links a:hover{
+  color: transparent;
+}
+
+.links a:hover .fa-github { color: #333; } 
+.links a:hover .fa-linkedin { color: #0077B5; } 
+.links a:hover .fa-instagram { color: #E4405F; } 
+.links a:hover .fa-facebook { color: #1877F2; } 
+
+.links span{
+  /* display: none; */
+}
+
 
 /* Scroll top button */
 .scroll {
@@ -33,10 +89,13 @@ body{
   cursor: pointer;
 }
 
+/* main container */
 .container {
   position: relative;
 }
 
+/* home section */
+/* navbar */
 nav {
   position: absolute;
   top: 0;
@@ -140,7 +199,7 @@ canvas {
 
 /* About Section */
 
-.About {
+.about {
   display: flex;
   flex-direction: column;
   min-height: 50dvh;
@@ -162,7 +221,7 @@ canvas {
 .spline-viewer {
   position: absolute;
   width: 100%;
-  height: 40%;
+  height: 20%;
   top: 100vh;
   left: 0;
   clip-path: polygon(0 0, 80% 0, 70% 100%, 0% 100%);
@@ -217,19 +276,26 @@ canvas {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  /* gap: .5rem; */
-  /* background-color: yellow;/ */
 }
 
-/* .myself span{
-  font-size: 2rem;
-  color: white;
-  font-weight: bolder;
-} */
 
 .myself span {
   font-size: 1.5rem;
   color: white;
   width: 90%;
+  text-align: left;
 }
 
+
+/* works  */
+.works{
+  height: 100vh;
+  background-color: red;
+}
+
+
+/* contact  */
+.contact{
+  height: 100vh;
+  background-color: green;
+}
