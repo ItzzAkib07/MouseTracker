@@ -1,14 +1,34 @@
 import './App.css';
+import React, { useState } from 'react';
+import avtaar from './images/Memoji.jpg';
 import Spline from '@splinetool/react-spline';
-import avtaar from './images/Memoji.jpg'
-import scroll from './images/scroll-top-img.png'
-import SmoothScrollingLink from './components/SmoothScrollingLink'
+import scroll from './images/scroll-top-img.png';
+import SmoothScrollingLink from './components/SmoothScrollingLink';
 
 
 
 
 function App() {
 
+
+  const [btnClass, setBtnClass] = useState('');
+
+  const handleClick = () => {
+    setBtnClass('btn-progress');
+
+    setTimeout(() => {
+      setBtnClass('btn-progress btn-fill');
+
+    }, 500);
+
+    setTimeout(() => {
+      setBtnClass('btn-complete');
+    }, 4100);
+
+    setTimeout(() => {
+      setBtnClass('');
+    }, 4100);
+  };
   return (
     <>
       <div className='container'>
@@ -18,10 +38,26 @@ function App() {
         <div className='ribbon'>
 
           <ul className='list'>
-            <li className='links'> <a href='https://github.com/ItzzAkib07' target='_blank'><i class="fa-brands fa-github"></i></a></li>
-            <li className='links'> <a href='https://www.linkedin.com/in/akib-mulla-931860194/' target='_blank'><i class="fa-brands fa-linkedin"></i></a></li>
-            <li className='links'> <a href='https://www.instagram.com/itzz._akib._____/' target='_blank'><i class="fa-brands fa-instagram"></i></a></li>
-            <li className='links'> <a href='https://www.facebook.com/akib.mulla.961' target='_blank'><i class="fa-brands fa-facebook"></i></a></li>
+            <li className='links'>
+              <a href='https://github.com/ItzzAkib07' target='_blank'>
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </li>
+            <li className='links'>
+              <a href='https://www.linkedin.com/in/akib-mulla-931860194/' target='_blank'>
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </li>
+            <li className='links'>
+              <a href='https://www.instagram.com/itzz._akib._____/' target='_blank'>
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+            <li className='links'>
+              <a href='https://www.facebook.com/akib.mulla.961' target='_blank'>
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </li>
           </ul>
 
         </div>
@@ -80,13 +116,19 @@ function App() {
             </div>
 
             <div className='myself'>
-              {/* <span style={{fontSize:'2rem', fontWeight:'bolder'}}>Who I'm</span> */}
+
               <span>
                 I'm on a mission to transform imagination into innovation. As a web developer, I'm not just a code junkie; I'm a dream weaver, a digital architect, and a problem solver 🪄 ✨
                 <br />
                 My coding toolbox is filled with the latest technologies and frameworks, including HTML5, CSS3, JavaScript, React.js, Material UI and more. I'm always learning and evolving to stay on the cutting edge of web development.
               </span>
+
+
+              <a href={avtaar} className={`btn ${btnClass}`} onClick={handleClick} download >
+                Download Resume <i class="fa-solid fa-download"></i>
+              </a>
             </div>
+
           </div>
 
         </section>
